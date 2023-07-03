@@ -9,7 +9,9 @@ export const viewsCalculate = (num: number) => {
     const firstCart = stringNumber.charAt(0);
     const lastCart = stringNumber.substring(1, stringNumber.length);
     const decimalNum = lastCart.charAt(0);
-    const newString = `${firstCart} ${decimalNum !== '0' && '.' + decimalNum}`;
+    const newString = `${firstCart} ${
+      decimalNum !== '0' ? '.' + decimalNum : ''
+    }`;
 
     return `${newString}k views`;
   }

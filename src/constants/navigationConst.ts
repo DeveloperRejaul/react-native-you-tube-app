@@ -6,4 +6,5 @@ export const navigationString = {
   subscription: 'SUBSCRIPTION',
   profile: 'PROFILE',
   search: 'SEARCH',
+  playVideo: 'PLAY_VIDEO',
 };

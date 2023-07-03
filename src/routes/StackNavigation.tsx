@@ -1,6 +1,7 @@
 import React from 'react';
 import {Profile, Search} from '../screens';
 import {navigationString} from '../constants/navigationConst';
+import PlayVideo from '../screens/play-video/PlayVideo';
 
 export default function StackNavigation(Stack: any): React.JSX.Element {
   return (
@@ -18,6 +19,13 @@ export default function StackNavigation(Stack: any): React.JSX.Element {
         }}
         component={Search}
         name={navigationString.search}
+      />
+      <Stack.Screen
+        options={{
+          animation: 'slide_from_bottom',
+        }}
+        component={PlayVideo}
+        name={navigationString.playVideo}
       />
     </>
   );

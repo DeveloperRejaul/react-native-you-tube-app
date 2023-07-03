@@ -6,6 +6,7 @@ const videosSlice = createSlice({
   initialState: {
     videos: db,
     filteredVideos: db,
+    relatedVideos: null,
   },
   reducers: {
     playFilter: (state, action) => {
@@ -17,8 +18,13 @@ const videosSlice = createSlice({
         );
       }
     },
+    handleRelatedVideos: (state, action) => {
+      state.relatedVideos = state.videos.filter(data =>
+        data.title.toLowerCase().includes(action.payload.toLowerCase()),
+      );
+    },
   },
 });
 
-export const {playFilter} = videosSlice.actions;
+export const {playFilter, handleRelatedVideos} = videosSlice.actions;
 export default videosSlice.reducer;
